@@ -26,4 +26,25 @@
 
 */
 
-// Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function currencySum(...notes) {
+
+    var noteString = "";
+    var validNotes = [5,10,20,50,100,500,1000];
+    var sum = 0;
+
+    for (var i=0; i<notes.length; i++){
+        if (validNotes.includes(notes[i])) {sum += notes[i];}
+        else {break;}
+    }
+
+    for (var j=0; j<notes.length; j++) {noteString += notes[j] + ", ";}
+
+    noteString = noteString.substring(0, noteString.length-2);
+
+    changeElementText("#currencyNotes", noteString);
+    changeElementText("#sum", sum);
+}
