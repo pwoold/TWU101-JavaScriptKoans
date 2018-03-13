@@ -13,6 +13,9 @@ $(document).ready(function() {
     currencySum(10, 20, 100);
 
     // Problem 5
-    // call your problem 5 code here
+    var adToBeCorrected = [["zara", "dhyaan", "dein"],
+                               ["mazarat", "chahenge"],
+                               ["attention", "please"]];
 
+    correctGivenAdvertisement(adToBeCorrected);
 });

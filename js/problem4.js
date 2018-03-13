@@ -32,7 +32,6 @@ function changeElementText(element, answer) {
 
 function currencySum(...notes) {
 
-    var noteString = "";
     var validNotes = [5,10,20,50,100,500,1000];
     var sum = 0;
 
@@ -41,10 +40,6 @@ function currencySum(...notes) {
         else {break;}
     }
 
-    for (var j=0; j<notes.length; j++) {noteString += notes[j] + ", ";}
-
-    noteString = noteString.substring(0, noteString.length-2);
-
-    changeElementText("#currencyNotes", noteString);
+    changeElementText("#currencyNotes", notes.join(", "));
     changeElementText("#sum", sum);
 }

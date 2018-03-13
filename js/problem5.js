@@ -33,4 +33,24 @@
      count: 7
  */
 
-// Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+
+function correctGivenAdvertisement(advertisement) {
+
+    var adString = "";
+    var hindu = advertisement[0];
+    var urdu = advertisement[1];
+    var english = advertisement[2];
+    var count = hindu.length + urdu.length + english.length;
+
+    changeElementText("#originalHindu", hindu.join(" "));
+    changeElementText("#originalUrdu", urdu.join(" "));
+    changeElementText("#originalEnglish", english.join(" "));
+
+    adString = hindu.join(" ") + " " + urdu.reverse().join(" ") + " " + english.join(" ");
+
+    changeElementText("#correctedAdvertisement", adString);
+    changeElementText("#wordCount", count);
+}
